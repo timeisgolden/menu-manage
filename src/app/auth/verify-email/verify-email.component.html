@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-content>
+        <div class="title text-center">Thank You for Registering</div>
+        <div *ngIf="currentUser">
+            <p class="text-center">We have sent a confirmation email to
+                <strong *ngIf="currentUser">{{currentUser.email}}</strong>.</p>
+            <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+        </div>
+
+        <button mat-button mat-raised-button color="accent" class="submit-button w-100-p"
+            aria-label="Resend Verification Email" (click)="resendVerificationMail()">
+            Resend Verification Email
+        </button>
+    </mat-card-content>
+</mat-card>

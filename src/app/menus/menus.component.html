@@ -1,0 +1,33 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <mat-list role="list">
+            <mat-list-item *ngFor="let menu of menus" role="listitem">
+                <button mat-button mat-raised-button color="secondary" class="submit-button w-100-p"
+                    (click)="selectMenu(menu)">
+                    {{menu.name}}
+                </button>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <button mat-button mat-raised-button color="primary" class="submit-button w-100-p"
+                    (click)="openMenuDialog()">
+                    Add Category
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <mat-list role="list">
+            <mat-list-item *ngFor="let item of selectedMenuItems" role="listitem">
+                <button mat-button mat-raised-button color="secondary" class="submit-button w-100-p">
+                    {{item.name}} - {{item.price}}
+                </button>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <button mat-button mat-raised-button color="primary" class="submit-button w-100-p"
+                    (click)="openItemDialog()">
+                    Add Item
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer-content>
+</mat-drawer-container>

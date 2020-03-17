@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-content *ngIf="form">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <h2>Edit Profile</h2>
+            <mat-error *ngIf="updateInvalid">
+                The username and phone number were not recognised
+            </mat-error>
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="User Name" formControlName="fullname" required>
+                <mat-error>
+                    Please provide a valid User Name
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="Phone Number" formControlName="phone" required>
+                <mat-error>
+                    Please provide a valid Phone Number
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="Address" formControlName="address">
+            </mat-form-field>
+            <button mat-raised-button color="primary">Update</button>
+        </form>
+    </mat-card-content>
+
+    <mat-card-content *ngIf="passwordForm">
+        <form [formGroup]="passwordForm" (ngSubmit)="onSubmitPasswordForm()">
+            <h2>Change Password</h2>
+            <mat-error *ngIf="updateInvalid">
+                The password were not recognised
+            </mat-error>
+            <mat-form-field class="full-width-input">
+                <input type="password" matInput placeholder="Password" formControlName="password" required>
+                <mat-error>
+                    Please provide a valid Password
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <input type="password" matInput placeholder="Confirm Password" formControlName="password_confirm"
+                    required>
+                <mat-error>
+                    Please provide a valid Confirm Password
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary">Change</button>
+        </form>
+    </mat-card-content>
+</mat-card>

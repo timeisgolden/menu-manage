@@ -1,0 +1,9 @@
+mat-drawer-container {
+  height: calc(100vh - 64px);
+  mat-drawer {
+    width: 40%;
+  }
+  .w-100-p {
+    width: 100%;
+  }
+}

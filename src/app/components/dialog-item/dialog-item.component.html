@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>
+    {{isNew ? 'Add Item' : 'Edit Item'}}
+</h1>
+<div mat-dialog-content *ngIf="item">
+    <mat-form-field>
+        <mat-label>Item Name</mat-label>
+        <input matInput [(ngModel)]="item.name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Item Price</mat-label>
+        <input matInput [(ngModel)]="item.price">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="item" cdkFocusInitial>Ok</button>
+</div>
